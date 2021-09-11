@@ -15,13 +15,13 @@ def dumpOutString(s):
 
 fileToUse = open("ip_ranges.txt", 'r')
 theseIps = fileToUse.readlines()
-firstipString = f"ip.addr == {theseIps[0]} "
+firstipString = f"ip.src == {theseIps[0]} "
 ipList = []
 ipList.insert(0, firstipString)
 counter = 1
 upperLimit = len(theseIps) 
 while counter < upperLimit:
-    toAdd = f"or ip.addr == {theseIps[counter]}"
+    toAdd = f"or ip.src == {theseIps[counter]}"
     ipList.append(toAdd)
     counter += 1
 
